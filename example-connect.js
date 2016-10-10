@@ -20,7 +20,7 @@ var log = function(text) {
   if(text) {
     console.log(text);
   }
-}
+};
 
 //==============================================================================
 // Step 1: Connect to sensortag device.
@@ -73,10 +73,11 @@ sensor.then(function(tag) {
 // A simple example of an act on the irTemperature sensor.
 sensor.then(function(tag) {
   tag.on("irTemperatureChange", function(objectTemp, ambientTemp) {
+    log(objectTemp);
     if(objectTemp > 25) {
       log("You're so hot");
     }
-  })
+  });
 });
 
 //==============================================================================
@@ -84,8 +85,5 @@ sensor.then(function(tag) {
 //------------------------------------------------------------------------------
 // The registered listeners will be invoked with the specified interval.
 sensor.then(function(tag) {
-  tag.setIrTemperaturePeriod(3000, log);
+  tag.setIrTemperaturePeriod(100, log);
 });
-
-
-

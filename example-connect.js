@@ -28,8 +28,8 @@ var log = function(text) {
 // It's address is printed on the inside of the red sleeve
 // (replace the one below).
 var ADDRESS = "b0:b4:48:c9:57:81";
-var connected = new Promise((resolve, reject) => SensorTag.discoverByAddress(ADDRESS, (tag) => resolv$
-  .then((tag) => new Promise((resolve, reject) => tag.connectAndSetup(() => resolve(tag))));
+var connected = new Promise((resolve, reject) => SensorTag.discoverByAddress(ADDRESS, (tag) => resolve(tag)))
+ .then((tag) => new Promise((resolve, reject) => tag.connectAndSetup(() => resolve(tag))));
 
   //==============================================================================
 // Step 2: Enable the sensors you need.

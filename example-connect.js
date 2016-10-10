@@ -89,7 +89,7 @@ sensor.then(function(tag) {
 
 sensor.then(function(tag) {
 tag.on("irTemperatureChange", function(objectTemp, ambientTemp) {
-log(objectTemp)
+  log(objectTemp);
 });
 });
 

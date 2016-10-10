@@ -76,16 +76,16 @@ sensor.then(function(tag) {
     if(objectTemp > 25) {
       log("You're so hot");
     }
-  })
+  });
 });
 
 //==============================================================================
 // Step 4 (optional): Configure periods for sensor reads.
 //------------------------------------------------------------------------------
 // The registered listeners will be invoked with the specified interval.
-//sensor.then(function(tag) {
-//  tag.setIrTemperaturePeriod(3000, log);
-//});
+sensor.then(function(tag) {
+  tag.setIrTemperaturePeriod(100, log);
+});
 
 sensor.then(function(tag) {
 tag.on("irTemperatureChange", function(objectTemp, ambientTemp) {

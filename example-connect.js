@@ -83,9 +83,13 @@ sensor.then(function(tag) {
 // Step 4 (optional): Configure periods for sensor reads.
 //------------------------------------------------------------------------------
 // The registered listeners will be invoked with the specified interval.
+//sensor.then(function(tag) {
+//  tag.setIrTemperaturePeriod(3000, log);
+//});
+
 sensor.then(function(tag) {
-  tag.setIrTemperaturePeriod(3000, log);
+tag.on("irTemperatureChange", function(objectTemp, ambientTemp) {
+log(objectTemp)
 });
-
-
+});
 

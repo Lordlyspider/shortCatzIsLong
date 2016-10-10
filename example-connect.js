@@ -20,7 +20,7 @@ var log = function(text) {
   if(text) {
     console.log(text);
   }
-}
+};
 
 //==============================================================================
 // Step 1: Connect to sensortag device.
